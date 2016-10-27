@@ -17,5 +17,5 @@ function Cat () {
 
 Noodles.chase(Markov);
 
-Noodles.chase.call(Noodles, Markov);
+Noodles.chase.call(Noodles, Markov); 
 Noodles.chase.apply(Noodles, [Markov]);
