@@ -49,3 +49,19 @@ function readingStatus(lib) {
 }
 
 readingStatus(library);
+
+class Cylinder {
+  constructor(diameter, height) {
+    this.diameter = diameter;
+    this.height = height;
+  }
+
+  volume() {
+    let radius = (this.diameter/2);
+    let vol = (Math.PI * radius * radius * this.height);
+    return parseFloat(vol.toFixed(4));
+  }
+}
+
+const can = new Cylinder(10.0, 4.0);
+console.log(can.volume());
