@@ -1,6 +1,6 @@
 function countBattleShips(board) {
   let count = 0;
-  let ship = 'X';
+
   for (let r = 0; r < board.length; r += 1) {
     for (let c = 0; c < board[r].length; c += 1) {
       if (startOfShip(board, r, c)) {
