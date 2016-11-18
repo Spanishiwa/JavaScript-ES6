@@ -14,9 +14,11 @@ function countBattleShips(board) {
 function startOfShip(board, r, c) {
   let ship = 'X';
   let pos = board[r][c];
+  let above = board[r-1] ? board[r-1][c] : undefined;
+  let left = board[r][c-1] ? board[r][c-1] : undefined;
 
   if (pos === ship) {
-    if (r === 0 || board[r-1][c] !== ship && c === 0 || board[r][c-1] !== ship) {
+    if ((r === 0 || above !== ship) && (c === 0 || left !== ship)) {
       return true;
     }
   }
