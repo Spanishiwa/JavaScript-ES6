@@ -18,7 +18,7 @@ function startOfShip(board, r, c) {
   let left = board[r][c-1] ? board[r][c-1] : undefined;
 
   if (pos === ship) {
-    if ((r === 0 || above !== ship) && (c === 0 || left !== ship)) {
+    if (above !== ship && left !== ship) {
       return true;
     }
   }
