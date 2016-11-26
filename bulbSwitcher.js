@@ -1,19 +1,33 @@
 function bulbSwitcher(n) {
-  let bulbs = Array(n).fill("off");
+  let bulbs = Array(n).fill("on");
+  let idx = 0;
 
-  for (let i = n; i < n; i += 1) {
-    if ((i/(i+1)) === 0) {
-      if (bulbs[i] === "off") {
-        bulbs[i] = "on";
+  while (idx < n) {
+    for (let i = 0; i < n; i += 1) {
+      // console.log(bulbs);
+      // console.log(`i is ${i}, idx is ${idx}, i%idx+1 ${(i+1)%i}`);
+      if ((idx+1)%i === 0) {
+        if (bulbs[i] === "off") {
+          bulbs[i] = "on";
+        }
+        else {
+          bulbs[i] = "off";
+        }
       }
-      else {
-        bulbs[i] = "off";
-      }
+
     }
+  idx += 1;
 
   }
 
-  return bulbs;
+  let count = 0;
+  bulbs.forEach(function(bulb) {
+    if (bulb === "on") {
+      count += 1;
+    }
+  });
+
+  return count;
 }
 
 console.log(bulbSwitcher(3));
