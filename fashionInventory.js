@@ -27,7 +27,7 @@ let obj1 = {
   ]
 };
 // [{}, {}]
-//
+// inventory[0]
 // [{name:, shoes: []}, {name:, shoes: []}]
 //
 // shoes: [{name:, price:}, {name:, price:}]
@@ -57,13 +57,13 @@ let obj1 = {
 // }
 
 function renderInventory(inventory) {
-  let results = [];
-
-  inventory.forEach(function(obj) {
+  let results = inventory.map(function(obj) {
+    let subresults = [];
     for (let i = 0; i < obj.shoes.length; i += 1) {
       let result = `${obj.name}, ${obj.shoes[i].name}, ${obj.shoes[i].price}`;
-      results.push(result);
+      subresults.push(result);
     }
+    return subresults;
   });
 
   return results.join('');

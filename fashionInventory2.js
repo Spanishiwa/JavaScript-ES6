@@ -1,0 +1,3 @@
+function designerAveragePrice(inventory) {
+
+}
