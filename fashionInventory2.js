@@ -1,4 +1,24 @@
-function designerAveragePrice(designer) {
+function designerAveragePrice(inventory) {
+  let designerData = inventory.map(function(designer) {
+    let designerDatum = {};
+
+    let sum = designer.shoes.reduce(function(total, shoe) {
+      total += shoe.price;
+      return total;
+    }, 0);
+
+    designerDatum.name = designer.name;
+    designerDatum.averagePrice = sum / designer.shoes.length;
+
+    return designerDatum;
+  });
+
+  let designersAveragePrice = {designers: designerData};
+
+  return designersAveragePrice;
+}
+
+function aggregateAveragePrice() {
   let sum = designer.shoes.reduce(function(total, shoe) {
     total += shoe.price;
     return total;
@@ -55,14 +75,6 @@ function assertEqual(actual, expected, testName) {
     console.log(`failed: ${testName}, actual is ${actual} expected is ${expected}`);
   }
 }
-let obj1 = {
-  name: 'Brunello Cucinelli',
-  shoes: [
-    {name: 'tasselled black low-top lace-up', price: 1000},
-    {name: 'tasselled green low-top lace-up', price: 1100},
-    {name: 'plain beige suede moccasin', price: 950},
-    {name: 'plain olive suede moccasin', price: 1050}
-  ]
-};
-// testAggregateAveragePrice();
-console.log(designerAveragePrice(obj1));
+
+testAggregateAveragePrice();
+// console.log(designerAveragePrice(obj1));
