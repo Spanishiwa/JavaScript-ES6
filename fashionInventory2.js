@@ -18,14 +18,14 @@ function designerAveragePrice(inventory) {
   return designersAveragePrice;
 }
 
-function aggregateAveragePrice() {
-  let sum = designer.shoes.reduce(function(total, shoe) {
-    total += shoe.price;
-    return total;
-  }, 0);
-
-  return (sum / designer.shoes.length);
-}
+// function aggregateAveragePrice(designer) {
+//   let sum = designer.shoes.reduce(function(total, shoe) {
+//     total += shoe.price;
+//     return total;
+//   }, 0);
+//
+//   return (sum / designer.shoes.length);
+// }
 
 function testAggregateAveragePrice() {
   let inventory = [
